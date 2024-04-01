@@ -1,6 +1,6 @@
 using System;
 
-public Node
+public class Node
 {
     public string Data;
     public Node Next;
@@ -12,7 +12,7 @@ public Node
     }
 }
 
-public LinkedList
+public class LinkedList
 {
     private Node head;
 
