@@ -21,6 +21,7 @@
 * Efficiency of common operations
 * Example Problem
 * Problem to Solve
+* [Linked Lists Page](linked_lists/linked_lists.md)
 
 ## IV. Tree
 * Introduction
@@ -31,3 +32,4 @@
 * Efficiency of common operations
 * Example Problem
 * Problem to Solve
+* [Binary Tree Page](binary_tree/binary_tree.md)
