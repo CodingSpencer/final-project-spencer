@@ -1,21 +1,3 @@
-using System;
-
-public class Program
-{
-    static void Main(string[] args)
-    {
-        LinkedList strings = new LinkedList();
-
-        strings.Add("First");
-        strings.Add("Second");
-        strings.Add("Third");
-        strings.Add("Fourth");
-
-        Console.Write("Linked List: ");
-        strings.PrintList();
-
-    }
-}
 public Node
 {
 public string Data;
