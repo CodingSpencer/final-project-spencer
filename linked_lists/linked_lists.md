@@ -30,7 +30,12 @@ the address of the following data.
 
 ![Linking Basics](images/linked_list.png)
 
+## Big O Notation
+Linked lists vary on complexity per operation. The majority of the time  they perform at O(n). This means they're repeating, but not with loops within loops. Anytime our operation has to sort through the linked list it is looping. The times it doesn't follow this pattern are when we add or remove from the beginning. Since it's in a set place we just go to the first Node and complete the operation. When we are trying to find another value we have to follow the addresses in each Node by looping. Even if it's the last Node we still have to cycle through all the earlier Nodes.
 
+A stack would be able to get the last value, but wouldn't keep track of any of the other values. Even with the stack being able to get the last value quickly we can see the opposite problem with finding the first value. This is why it's important to use different data structures for different situations. Using the normal list for every situation causes so much inefficiency. The main way to check how well one could work in a situation is based off the Big O. Sometimes depending on the experience of the user it can change too. Linked lists requires more of a foundation of code for this data structure.
+
+## Basic Operations
 
 ## Example
 Here is the sample [code](Example/Program.cs).
