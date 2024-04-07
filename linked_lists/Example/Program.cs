@@ -31,7 +31,7 @@ public Node(string data)
 public LinkedList
 {
 private Node head;
-
+}
 public LinkedList()
 {
     head = null;
