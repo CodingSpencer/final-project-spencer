@@ -17,36 +17,29 @@ class Program
         Console.WriteLine("Welcome to the keyboard! Please attempt to spell the provided word. Select a character and push enter. When you want to remove the most recent added character select b and push enter.\nExtra: When you want to print your entry select p and push enter.");
         Console.WriteLine($"Please attempt to spell {selectedWord}!");
 
-        while (true)
-	{
-	    Console.Write("Enter a Character: ");
-	    string character = Console.ReadLine();
+        string character = " ";
 
-	    if (character.Length == 1 && char.IsLetter(character[0])) // Check if input is a single letter
-	    {
-		keyboard.Push(character);
-	    }
-	    else if (character == "b")
-	    {
-		if (keyboard.Count > 0)
-		{
-		    keyboard.Pop();
-		}
-		else
-		{
-		    Console.WriteLine("Keyboard is empty!");
-		}
-	    }
-	    else if (character == "p")
-	    {
-		break; // Exit the loop if "p" is entered
-	    }
-	    else
-	    {
-		Console.WriteLine("Invalid input. Please enter a single letter, 'b', or 'p'.");
-	    }
-	}
+        while (!keyboard.Contains("p"))
+        {
+            Console.Write("Enter a Character: ");
+            character = Console.ReadLine();
 
+            if (character == "s" || character == "t" || character == "e" || character == "a" || character == "l")
+            {
+                keyboard.Push(character);
+            }
+            else if (character == "b")
+            {
+                if (keyboard.Count > 0)
+                {
+                    keyboard.Pop();
+                }
+                else
+                {
+                    Console.WriteLine("Keyboard is empty!");
+                }
+            }
+        }
 
         Stack<string> print = new Stack<string>();
 
