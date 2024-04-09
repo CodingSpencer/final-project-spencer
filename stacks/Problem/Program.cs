@@ -2,13 +2,16 @@
 
 using System.Runtime.CompilerServices;
 
-Stack<string> checker_moves = new Stack<string>();
+Stack<string> keyboard = new Stack<string>();
 
-Console.WriteLine("Welcome to basic checkers game! \nPlease enter R to move right or L to move left. \nEnter U to undo your most recent move. \nEnter Q to quit the game.");
+List<string> words = new List<string>("steal", "stela", "tales", "least", "slate");
 
-while (true)
-{
-   // Create a loop that'll take a user's input and record it in a stack. Add an undo option and a quit option.
-}
+Random rand = new Random();
+int randomIndex = rand.Next(0, words.Count);
+string selectedWord = words[randomIndex];
+
+Console.WriteLine("Welcome to the keyboard! Please attempt to spell the provided word. Select a character and push enter. When you want to remove the most recent added character select b and push enter.\nExtra: When you want to print your entry select p and push enter.");
+
+// Write code that will create a user input based keyboard according to the print statment above
 
 

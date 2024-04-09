@@ -114,7 +114,7 @@ The problem we'll try to resolve with a linked list is removing duplicates in a 
 Here is the sample [code](Example/Program.cs).
 
 ### Problem
-Here is the sample [code](Problem/Program.cs).
+Here is the template [code](Problem/Program.cs).
 
 ### Solution
 Here is the sample [code](Solution/Program.cs).

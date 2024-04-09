@@ -116,7 +116,7 @@ For this coding exercise, we're going to try to create two different operations.
 Here is the sample [code](Example/Program.cs).
 
 ### Problem
-Here is the sample [code](Problem/Program.cs).
+Here is the template [code](Problem/Program.cs).
 
 ### Solution
 Here is the sample [code](Solution/Program.cs).

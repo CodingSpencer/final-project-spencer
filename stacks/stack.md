@@ -1,70 +1,48 @@
 # Stacks
 
-Most beginning programmers know how to use basic lists very well when coding projects. However, 
+Most beginning programmers know how to use basic lists well when coding projects. However, 
 sometimes there's a better alternative to hold the data in the program. One of these different
 options is called stacks. A stack is a type of list that adds the most recent addition to the top
-of the list and removes items from the same place. We'll discuss how this list works by looking
-over an example, locating a related issue, and find a acceptable solution.
+of the list and removes items from the same place. It's similar to when we stack boxes when moving. If you accidentally pack something you need at the bottom then you have to take everything else off the top first. This differs from lists because it does not use indexes and from queues because it removes from the top instead of the bottom.
 
-## Example
+Stacks can be used for multiple different types of situations. Some of the most common can include memory management, algorithm backtracking, and any undo operations. All of these can work better by applying the Last-In-First-Out method(LIFO). Queues use the opposite method of First-In-First-Out method(FIFO).It can save time and help us lower the amount of tracking a lists items. This data structure is fairly simple with built in operations. It does not require Nodes which we will learn about in linked lists, but can be inputed with values. 
 
-Let's begin by using the example of actually stacking pancakes. A stack has the same 
-function of holding items of data, but differs from everyday lists in how those items 
-are removed. It's last added, first removed. This means, just like if we were to stack 
-pancakes, that we remove from the top of the stack. Which is its most recent addition
-to the stack. To begin we need to create the new stack.
+![Stack Structure](images/stack_struct.png)
 
-Example Code:
+## Big O Notation
+
+The simplicity of stacks results in a simple Big O Notation as it only has two main operations: push and pop. This notation in O(1) which means it does not loop through. There is one exception which is where we are searching for a item in the stack. When we search in a stack we have to loop through the stack comparing it to its items. When pushing, O(1) means that we'll push the item into the stack and then be done. The same happens when we pop items except that they are removed. This is similar to how git works. It will take your most recent save and remove it to be added to a hub.
+
+![Big O Graph](images/big_O_Graph.jpeg)
+
+
+## Set Up & Basic Operations
+To set up a stack C# only requires one line. Its basic operations are built in and include the following: push, pop, contains, and count.
+
 ```csharp
-// Create a new stack
-Stack<String> pancakes = new Stack<string>();
+Stack<String> stack = new Stack<string>();
 
-// Create items to add to stack
-string first = "chocolate chip pancake";
-string second = "buttermilk pancake";
-string third = "peanut butter pancake";
-string fourth = "banana pancake";
-string fifth = "french toast";
+stack.push(1); // Add item to the top of the stack
+stack.push(2);
 
-// Begin adding items (strings) into the stack
-pancakes.Push(first);
-pancakes.Push(second);
-pancakes.Push(third);
-pancakes.Push(fourth);
-pancakes.Push(fifth);
-```
-Next let's experiment with adding and removing items from the stack. This option can be very helpful in many circumstances
-if one is wanting that most recent item. Comes in handy when you're wanting that warmest pancake.
+stack.Count();   // Get number of items in the stack
 
-Example Code:
-```csharp
-// Stack Contents: french toast, banana pancake, peanut butter pancake, buttermilk pancake, chocolate chip pancake
+stack.Contains();// Check if an item exists in the stack
 
-// Remove the top two items from the stack
-pancakes.Pop();
-// Stack Contents: banana pancake, peanut butter pancake, buttermilk pancake, chocolate chip pancake
-pancakes.Pop();
-// Stack Contents: peanut butter pancake, buttermilk pancake, chocolate chip pancake
-
-// Add another item and remove it
-pancakes.Push(first);
-// Stack Contents: chocolate chip pancake, peanut butter pancake, buttermilk pancake, chocolate chip pancake
-pancakes.Pop();
-// Stack Contents: peanut butter pancake, buttermilk pancake, chocolate chip pancake
+stack.pop( );    // Remove and return the item from the top of the stack
 ```
 
 ## Problem
 
-Now that we've covered what a stack is let's find a problem we can solve with them. If you've 
-ever played checkers or chess you've most likely wished for an undo option. Now if you play on
-an app, this option is usually programmed in. How could we use a stack to program this option?
+Now that we've covered what a stack is, let's find a problem we can solve with them. We're going to attempt to mimic the functions of a basic computer's keyboard. A keyboard will input a single character at a time into the computer dependent on what keys are pressed. What happens when a individual makes a mistake? We backspace to remove or undo the mistake. We'll attempt to write a program that mimics this in C#.
 
-Here's a template for the beginning of the project.
 
-```csharp
-Stack<string> checker_moves = new Stack<string>();
 
-Console.WriteLine("Welcome to basic checkers game!\nPlease enter R to move right or L to move left.\nEnter U to undo your most recent move.\nEnter Q to quit the game.");
-```
+### Example
+Here is the sample [code](Example/Program.cs).
 
-Here's a sample [solution](Program.cs) for you to compare with after you have completed your program.
+### Problem
+Here is the template [code](Problem/Program.cs).
+
+### Solution
+Here is the sample [code](Solution/Program.cs).

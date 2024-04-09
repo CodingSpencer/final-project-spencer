@@ -29,55 +29,15 @@ public class LinkedList {
     }
 
     public void Add(int value){
-        ListNode newNode = new ListNode(value);
-        if (head == null){
-            head = newNode;
-            return;
-        }
-
-        ListNode current = head;
-        while (current.next != null){
-            current = current.next;
-        }
-        current.next = newNode;
+        // Add code to add a node at the end of the linked list
     }
 
     public void Remove(int value) {
-        if (head = null){
-            return;
-        }
-
-        if  (head.val == value){
-            head = head.next;
-            return;
-        }
-
-        ListNode current = head;
-        ListNode prev = null;
-        while (current != null && current.val != value){
-            prev = current;
-            current = current.next;
-        }
-
-        if (current != null){
-            prev.next = current.next;
-        }
+        // Add code to remove a node from any place in the list
     }
 
     public void RemoveDuplicates(){
-        Hashset<int> seen = new Hashset<int> ();
-        ListNode current = head;
-        ListNode prev = null;
-        while (current != null){
-            if (!seen.contains(current.val)){
-                seen.add(current.val);
-                prev = current;
-                current = current.next;
-            } else{
-                prev.next = current.next;
-                current = current.next
-            }
-        }
+        // Add your code here to find and remove any duplicates
     }
 
     public void PrintList(){
