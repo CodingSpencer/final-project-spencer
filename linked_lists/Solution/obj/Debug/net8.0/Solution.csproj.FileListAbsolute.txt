@@ -1,0 +1,15 @@
+/home/spencer/RiderProjects/final-project-spencer/linked_lists/Solution/bin/Debug/net8.0/Solution
+/home/spencer/RiderProjects/final-project-spencer/linked_lists/Solution/bin/Debug/net8.0/Solution.deps.json
+/home/spencer/RiderProjects/final-project-spencer/linked_lists/Solution/bin/Debug/net8.0/Solution.runtimeconfig.json
+/home/spencer/RiderProjects/final-project-spencer/linked_lists/Solution/bin/Debug/net8.0/Solution.dll
+/home/spencer/RiderProjects/final-project-spencer/linked_lists/Solution/bin/Debug/net8.0/Solution.pdb
+/home/spencer/RiderProjects/final-project-spencer/linked_lists/Solution/obj/Debug/net8.0/Solution.GeneratedMSBuildEditorConfig.editorconfig
+/home/spencer/RiderProjects/final-project-spencer/linked_lists/Solution/obj/Debug/net8.0/Solution.AssemblyInfoInputs.cache
+/home/spencer/RiderProjects/final-project-spencer/linked_lists/Solution/obj/Debug/net8.0/Solution.AssemblyInfo.cs
+/home/spencer/RiderProjects/final-project-spencer/linked_lists/Solution/obj/Debug/net8.0/Solution.csproj.CoreCompileInputs.cache
+/home/spencer/RiderProjects/final-project-spencer/linked_lists/Solution/obj/Debug/net8.0/Solution.sourcelink.json
+/home/spencer/RiderProjects/final-project-spencer/linked_lists/Solution/obj/Debug/net8.0/Solution.dll
+/home/spencer/RiderProjects/final-project-spencer/linked_lists/Solution/obj/Debug/net8.0/refint/Solution.dll
+/home/spencer/RiderProjects/final-project-spencer/linked_lists/Solution/obj/Debug/net8.0/Solution.pdb
+/home/spencer/RiderProjects/final-project-spencer/linked_lists/Solution/obj/Debug/net8.0/Solution.genruntimeconfig.cache
+/home/spencer/RiderProjects/final-project-spencer/linked_lists/Solution/obj/Debug/net8.0/ref/Solution.dll
