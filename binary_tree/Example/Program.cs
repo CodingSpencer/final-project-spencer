@@ -74,7 +74,7 @@ public class Node
         }
         else if (value < Data)
         {
-            // Insert to the left
+            // Insert item to the left
             if (Left == null)
                 Left = new Node(value);
             else
@@ -82,7 +82,7 @@ public class Node
         }
         else
         {
-            // Insert to the right
+            // Insert item to the right
             if (Right == null)
                 Right = new Node(value);
             else
