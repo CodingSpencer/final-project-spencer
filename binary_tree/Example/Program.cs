@@ -1,8 +1,9 @@
+﻿// See https://aka.ms/new-console-template for more information
 using System;
 
 public class BinarySearchTree
 {
-    private Node? _root;
+    private Node _root;
 
     public BinarySearchTree()
     {
@@ -11,11 +12,9 @@ public class BinarySearchTree
 
     public void Insert(int value)
     {
-        Node newNode = new Node(value);
-        // If empty, points to the root
         if (_root == null)
         {
-            _root = newNode;
+            _root = new Node(value);
         }
         else
         {
@@ -56,24 +55,27 @@ public class BinarySearchTree
 public class Node 
 {
     public int Data { get; set; }
-    public Node? Right { get; private set; }
-    public Node? Left { get; private set; }
+    public Node Right { get; set; }
+    public Node Left { get; set; }
 
     public Node(int data)
     {
         this.Data = data;
+        this.Right = null;
+        this.Left = null;
     }
 
     public void Insert(int value)
     {
         if (value == Data)
         {
-
+            // Duplicates not allowed
+            return;
         }
         else if (value < Data)
         {
             // Insert to the left
-            if (Left is null)
+            if (Left == null)
                 Left = new Node(value);
             else
                 Left.Insert(value);
@@ -81,7 +83,7 @@ public class Node
         else
         {
             // Insert to the right
-            if (Right is null)
+            if (Right == null)
                 Right = new Node(value);
             else
                 Right.Insert(value);
@@ -90,26 +92,20 @@ public class Node
 
     public bool Contains(int value)
     {
-        node = new Node(value);
-        if (node is not null)
+        if (value == Data)
         {
-            if (node.Data == value)
-            {
-                return true;
-            }
-            else
-            {
-                if (Contains(node.Left, value))
-                {
-                    return true;
-                }
-
-                if (Contains(node.Right, value))
-                {
-                    return true;
-                }
-            }
+            return true;
         }
+        else if (value < Data && Left != null)
+        {
+            return Left.Contains(value);
+        }
+        else if (value > Data && Right != null)
+        {
+            return Right.Contains(value);
+        }
+        return false;
+    }
 
     public void Display()
     {
@@ -117,11 +113,10 @@ public class Node
         {
             Left.Display();
         }
-        Console.Write(Value + " ");
+        Console.Write(Data + " ");
         if (Right != null)
         {
             Right.Display();
         }
     }
-}
 }
