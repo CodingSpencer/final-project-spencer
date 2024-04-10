@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
+using System.Text;
+using System.Collections.Generic;
 
 public class Node
 {
@@ -70,34 +72,47 @@ public class BinarySearchTree
         return items.ToString();
     }
 
-    private void Serialize(Node node, StringBuilder items) 
+    private void Serialize(Node? node, StringBuilder items) 
     {
-        // Write code to serialize the BST into an string
-        if (node == null){
-
-        }
-        else
+        // Write code to serialize the BST into a string
+        if (node == null)
         {
-            sb.Append(node.value + " ");
-            Serialize(node.left, sb);
-            Serialize(node.right, sb);
+            return;
         }
+
+        items.Append(node.Data + " ");
+        Serialize(node.Left, items);
+        Serialize(node.Right, items);
     }
 
-    public static Node Deserialize()
+    public static Node Deserialize(string serializedTree)
     {
         // Write code to deserialize a BST string
-        // Hint: You can recursively call this function or recursively call another
-        string[]  values = list.Split(' ');
-        Queue<string> queue = new Queue<string> (values);
+        if (string.IsNullOrEmpty(serializedTree))
+        {
+            return null;
+        }
+
+        string[] values = serializedTree.Split(' ');
+        Queue<string> queue = new Queue<string>(values);
         return DeserializeQueue(queue);
     }
 
-    private static Node DeserializeQueue(Queue<string> queue)
+    private static Node? DeserializeQueue(Queue<string> queue)
     {
+        if (queue.Count == 0)
+        {
+            return null;
+        }
+
         string item = queue.Dequeue();
+        if (string.IsNullOrEmpty(item) || item == "null")
+        {
+            return null;
+        }
+
         int value = int.Parse(item);
-        Node node = new Node(item);
+        Node node = new Node(value);
         node.Left = DeserializeQueue(queue);
         node.Right = DeserializeQueue(queue);
         return node;
@@ -142,7 +157,7 @@ public class BinarySearchTree
         Node? deserializedRoot = BinarySearchTree.Deserialize(serializedTree);
         BinarySearchTree deserializedBST = new BinarySearchTree();
         deserializedBST._root = deserializedRoot;
-        Console.WriteLine("Deserialized BST:");
+        Console.Write("Deserialized BST: ");
         deserializedBST.Display();
     }
 }
