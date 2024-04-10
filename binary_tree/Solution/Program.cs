@@ -1,6 +1,59 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
 
+public class Node
+{
+    public int Data { get; set; }
+    public Node? Right { get; set; }
+    public Node? Left { get; set; }
+
+    public Node(int data)
+    {
+        Data = data;
+        Right = null;
+        Left = null;
+    }
+
+    public void Insert(int value)
+    {
+        if (value < Data)
+        {
+            if (Left == null)
+            {
+                Left = new Node(value);
+            }
+            else
+            {
+                Left.Insert(value);
+            }
+        }
+        else if (value > Data)
+        {
+            if (Right == null)
+            {
+                Right = new Node(value);
+            }
+            else
+            {
+                Right.Insert(value);
+            }
+        }
+    }
+
+    public void Display()
+    {
+        if (Left != null)
+        {
+            Left.Display();
+        }
+        Console.Write(Data + " ");
+        if (Right != null)
+        {
+            Right.Display();
+        }
+    }
+}
+
 public class BinarySearchTree
 {
     private Node? _root;
@@ -13,7 +66,7 @@ public class BinarySearchTree
     public string Serialize() 
     {
         StringBuilder items = new StringBuilder();
-        Serialize(_root, items)
+        Serialize(_root, items);
         return items.ToString();
     }
 
@@ -91,58 +144,5 @@ public class BinarySearchTree
         deserializedBST._root = deserializedRoot;
         Console.WriteLine("Deserialized BST:");
         deserializedBST.Display();
-    }
-}
-
-public class Node
-{
-    public int Data { get; set; }
-    public Node? Right { get; set; }
-    public Node? Left { get; set; }
-
-    public Node(int data)
-    {
-        Data = data;
-        Right = null;
-        Left = null;
-    }
-
-    public void Insert(int value)
-    {
-        if (value < Data)
-        {
-            if (Left == null)
-            {
-                Left = new Node(value);
-            }
-            else
-            {
-                Left.Insert(value);
-            }
-        }
-        else if (value > Data)
-        {
-            if (Right == null)
-            {
-                Right = new Node(value);
-            }
-            else
-            {
-                Right.Insert(value);
-            }
-        }
-    }
-
-    public void Display()
-    {
-        if (Left != null)
-        {
-            Left.Display();
-        }
-        Console.Write(Data + " ");
-        if (Right != null)
-        {
-            Right.Display();
-        }
     }
 }
