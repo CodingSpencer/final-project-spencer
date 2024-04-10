@@ -17,29 +17,31 @@ class Program
         Console.WriteLine("Welcome to the keyboard! Please attempt to spell the provided word. Select a character and push enter. When you want to remove the most recent added character select b and push enter.\nExtra: When you want to print your entry select p and push enter.");
         Console.WriteLine($"Please attempt to spell {selectedWord}!");
 
+	string character;
+
         while (true)
 	{
 	    Console.Write("Enter a Character: ");
-	    string character = Console.ReadLine();
+	    character = Console.ReadLine();
 
-	    if (character.Length == 1 && char.IsLetter(character[0])) // Check if input is a single letter
+	    if (character == "b")
 	    {
-		keyboard.Push(character);
-	    }
-	    else if (character == "b")
-	    {
-		if (keyboard.Count > 0)
-		{
-		    keyboard.Pop();
-		}
-		else
-		{
-		    Console.WriteLine("Keyboard is empty!");
-		}
+			if (keyboard.Count > 0)
+			{
+				keyboard.Pop();
+			}
+			else
+			{
+				Console.WriteLine("Keyboard is empty!");
+			}
 	    }
 	    else if (character == "p")
 	    {
 		break; // Exit the loop if "p" is entered
+	    }
+		else if (character.Length == 1 && char.IsLetter(character[0])) // Check if input is a single letter
+	    {
+		keyboard.Push(character);
 	    }
 	    else
 	    {
