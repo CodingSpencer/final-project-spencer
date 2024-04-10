@@ -110,7 +110,26 @@ public void Display()
 ```
 
 ## Problem
-For this coding exercise, we're going to try to create two different operations. Nothing is more annoying than being forced to repeat the same repetitive step over and over again. To prevent us from having to deal with this annoyance, we'll create an operation to serialize the tree and another to deserialize. This will require us to have to go through the list and add the values in the nodes into a new string.
+For this coding exercise, we're going to try to create two different operations. Nothing is more annoying than being forced to repeat the same repetitive step over and over again. To prevent us from having to deal with this annoyance, we'll create an operation to serialize the tree and another to deserialize. This will require us to have to go through the list and add the values in the nodes into a new string. One of the best ways to do this is to use a queue. Here's some basic operations that you can use with a queue.
+
+```csharp
+Queue<int> queue = new Queue<int>();
+
+queue.Enqueue(1);
+queue.Enqueue(2);
+queue.Enqueue(3);
+queue.Enqueue(4);
+
+int value = queue.Dequeue();
+// Removes the first value in the queue and store it as value
+
+int count = queue.Count
+// Counts the amount of items in the queue and stores it as count
+```
+
+## Solution
+
+Here is the solution [code](Solution/Program.cs).
 
 ### Example
 Here is the sample [code](Example/Program.cs).
